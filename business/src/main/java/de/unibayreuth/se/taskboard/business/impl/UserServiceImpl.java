@@ -4,10 +4,14 @@ import de.unibayreuth.se.taskboard.business.domain.User;
 import de.unibayreuth.se.taskboard.business.exceptions.MalformedRequestException;
 import de.unibayreuth.se.taskboard.business.exceptions.UserNotFoundException;
 import de.unibayreuth.se.taskboard.business.ports.UserService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 
+@Service
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
     @Override
