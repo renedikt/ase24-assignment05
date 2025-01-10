@@ -37,6 +37,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @NonNull
     public User create(User user) throws MalformedRequestException, DuplicateNameException {
         if (user.getId() != null) {
             throw new MalformedRequestException("User ID must not be set.");
