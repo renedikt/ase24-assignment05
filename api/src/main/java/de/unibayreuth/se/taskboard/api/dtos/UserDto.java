@@ -1,8 +1,5 @@
 package de.unibayreuth.se.taskboard.api.dtos;
 
-//TODO(✅): Add DTO for users.
-
-
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import org.springframework.lang.Nullable;

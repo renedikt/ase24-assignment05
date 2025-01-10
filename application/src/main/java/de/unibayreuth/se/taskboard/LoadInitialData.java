@@ -21,7 +21,6 @@ import java.util.List;
 @Profile("dev")
 class LoadInitialData implements InitializingBean {
     private final TaskService taskService;
-    // TODO(✅): Fix this class after resolving the other TODOs.
     private final UserService userService;
 
     @Override

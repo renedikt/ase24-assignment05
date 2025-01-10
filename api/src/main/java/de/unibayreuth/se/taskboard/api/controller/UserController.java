@@ -4,7 +4,6 @@ import de.unibayreuth.se.taskboard.api.dtos.UserDto;
 import de.unibayreuth.se.taskboard.api.mapper.UserDtoMapper;
 import de.unibayreuth.se.taskboard.business.exceptions.DuplicateNameException;
 import de.unibayreuth.se.taskboard.business.exceptions.MalformedRequestException;
-import de.unibayreuth.se.taskboard.business.exceptions.TaskNotFoundException;
 import de.unibayreuth.se.taskboard.business.exceptions.UserNotFoundException;
 import de.unibayreuth.se.taskboard.business.ports.UserService;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
@@ -38,10 +37,6 @@ import java.util.UUID;
 public class UserController {
         private final UserService userService;
         private final UserDtoMapper userDtoMapper;
-
-        // TODO(✅): Add GET /api/users endpoint to retrieve all users.
-        // TODO(✅): Add GET /api/users/{id} endpoint to retrieve a user by ID.
-        // TODO(✅): Add POST /api/users endpoint to create a new user based on a provided user DTO.
 
         @Operation(
                 summary = "Get all users.",

@@ -7,7 +7,6 @@ import de.unibayreuth.se.taskboard.api.mapper.UserDtoMapper;
 import de.unibayreuth.se.taskboard.business.domain.Task;
 import de.unibayreuth.se.taskboard.business.domain.User;
 import io.restassured.http.ContentType;
-import lombok.SneakyThrows;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
@@ -72,8 +71,6 @@ public class TaskBoardSystemTests extends AbstractSystemTest {
                 .statusCode(400);
 
     }
-
-    //TODO(✅): Add at least one test for each new endpoint in the users controller (the create endpoint can be tested as part of the other endpoints).
 
     @Test
     void getAllCreatedUsers() {
