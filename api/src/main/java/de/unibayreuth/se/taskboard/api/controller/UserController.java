@@ -2,6 +2,7 @@ package de.unibayreuth.se.taskboard.api.controller;
 
 import de.unibayreuth.se.taskboard.api.dtos.UserDto;
 import de.unibayreuth.se.taskboard.api.mapper.UserDtoMapper;
+import de.unibayreuth.se.taskboard.business.exceptions.DuplicateNameException;
 import de.unibayreuth.se.taskboard.business.exceptions.MalformedRequestException;
 import de.unibayreuth.se.taskboard.business.exceptions.TaskNotFoundException;
 import de.unibayreuth.se.taskboard.business.exceptions.UserNotFoundException;
@@ -87,7 +88,7 @@ public class UserController {
                         return ResponseEntity.ok(
                                 userDtoMapper.fromBusiness(userService.getById(id))
                         );
-                } catch (TaskNotFoundException e) {
+                } catch (UserNotFoundException e) {
                         throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage(), e);
                 }
         }
@@ -105,7 +106,7 @@ public class UserController {
                         ),
                         @ApiResponse(
                                 responseCode = "400",
-                                description = "" //TODO
+                                description = "ID present or name is already in use."
                         )
                 }
         )
@@ -119,7 +120,7 @@ public class UserController {
                                         )
                                 )
                         );
-                } catch (MalformedRequestException e) {
+                } catch (MalformedRequestException | DuplicateNameException e) {
                         throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage(), e);
                 }
         }

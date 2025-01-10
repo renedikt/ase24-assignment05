@@ -18,7 +18,7 @@ public class User implements Serializable {
         @Nullable
         private UUID id; // null when user is not persisted yet
         @NonNull
-        private LocalDateTime createdAt = LocalDateTime.now(ZoneId.of("UTC")); // set on task creation
+        private LocalDateTime createdAt = LocalDateTime.now(ZoneId.of("UTC")); // set on user creation
         @NonNull
         private String name;
 }

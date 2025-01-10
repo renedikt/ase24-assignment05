@@ -4,6 +4,7 @@ package de.unibayreuth.se.taskboard.api.dtos;
 
 
 import jakarta.validation.constraints.NotNull;
+import lombok.Data;
 import org.springframework.lang.Nullable;
 
 import java.time.LocalDateTime;
@@ -12,11 +13,12 @@ import java.util.UUID;
 /**
  * DTO that represents a user.
  */
-public record UserDto(
+@Data
+public class UserDto {
         @Nullable
-        UUID uuid,
+        private UUID id;
         @Nullable
-        LocalDateTime createdAt,
+        private LocalDateTime createdAt;
         @NotNull
-        String name
-) { }
+        private String name;
+}
